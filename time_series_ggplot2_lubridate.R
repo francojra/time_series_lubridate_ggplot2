@@ -13,5 +13,17 @@
 
 # Formato de datas -------------------------------------------------------------------------------------------------------------------------
 
+### Para construie séries temporais, é necessário que a variável tempo esteja
+### em formato de data. O primeiro passo de suas análises é checar se o R ler
+### corretamente o formato de data da sua variável. Isso é possível usando a
+### função str().
 
+### Caso não esteja em formato de data, o lubridate pode corrigir esse problema
+### facilmente. Esse pacote oferece várias funções com os nomes compostos pelas 
+### letras: year (y), month (m) and day (d).
+
+library(lubridate)
+
+time <- c("2019-04-17", "2019-03-21") # Isso é um character
+ymd(time) # Isso é formato de data
 
