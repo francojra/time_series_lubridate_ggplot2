@@ -79,7 +79,6 @@ data <- data.frame(
   value = runif(365) - seq(-140, 224)^2 / 10000
 )
 
-
 p <- ggplot(data, aes(x = day, y = value)) +
   geom_line( color = "#69b3a2") + 
   xlab("") +
