@@ -37,5 +37,35 @@ ymd(time) # Isso é formato de data
 
 # Gráfico básico de linhas para visualizar séries temporais --------------------------------------------------------------------------------
 
+library(ggplot2)
+library(dplyr)
 
+### Dados fictícios
 
+data <- data.frame(
+  day = as.Date("2017-06-14") - 0:364, 
+  value = runif(365) + seq(-140, 224)^2 / 10000
+)
+
+### Gráfico básico
+
+p <- ggplot(data, aes(x = day, y = value)) +
+  geom_line() + 
+  xlab("")
+p
+
+### Observação: o ggplot2 irá apenas produzir gráficos de séries temporais caso
+### a variável tempo esteja em formato de data.
+
+# Outros formatos de datas -----------------------------------------------------------------------------------------------------------------
+
+### A partir que a variável é definida como data, você pode usar a função scale_x_data()
+### do ggplot2 para modificar o formato da data.
+
+p + scale_x_date(date_labels = "%b")
+p + scale_x_date(date_labels = "%Y %b %d")
+p + scale_x_date(date_labels = "%W")
+p + scale_x_date(date_labels = "%m-%Y")
+p + scale_x_date(date_labels = "%B")
+p + scale_x_date(date_labels = "%y")
+p + scale_x_date(date_labels = "%Y")
