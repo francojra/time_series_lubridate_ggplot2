@@ -69,3 +69,21 @@ p + scale_x_date(date_labels = "%m-%Y")
 p + scale_x_date(date_labels = "%B")
 p + scale_x_date(date_labels = "%y")
 p + scale_x_date(date_labels = "%Y")
+
+# Adicionando ângulo aos rótulos do eixo x -------------------------------------------------------------------------------------------------
+
+library(hrbrthemes) # Adiciona um tema 'clean' ao gráfico
+
+data <- data.frame(
+  day = as.Date("2017-06-14") - 0:364,
+  value = runif(365) - seq(-140, 224)^2 / 10000
+)
+
+
+p <- ggplot(data, aes(x = day, y = value)) +
+  geom_line( color = "#69b3a2") + 
+  xlab("") +
+  theme_ipsum() +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1)) 
+
+p
