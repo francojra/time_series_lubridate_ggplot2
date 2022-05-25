@@ -27,3 +27,15 @@ library(lubridate)
 time <- c("2019-04-17", "2019-03-21") # Isso é um character
 ymd(time) # Isso é formato de data
 
+# Séries de tempo com ggplot2 --------------------------------------------------------------------------------------------------------------
+
+### O ggplot2 oferece muitas funcionalidades para visualizar séries temporais. O
+### formato de data será reconhecido automaticamente, resultando nos rótulos do
+### eixo x. A função scale_x_data() torna fácil a customização desses rótulos.
+### O pacote plotly pode tornar os gráficos interativos adicionando uma linha de 
+### código a mais.
+
+# Gráfico básico de linhas para visualizar séries temporais --------------------------------------------------------------------------------
+
+
+
